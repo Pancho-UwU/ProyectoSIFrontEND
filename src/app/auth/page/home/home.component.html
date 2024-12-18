@@ -1,0 +1,64 @@
+<!-- component -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    <div class="relative h-full w-full bg-slate-950">
+        <!-- Nuevo fondo -->
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+    </div>
+
+    <div class="flex h-screen w-full" x-data="{openMenu:1}">
+        <!-- Start SideBar-->
+        
+        <!-- End SideBar -->
+    
+        <!-- Start Content -->
+        <div class="relative z-0 flex flex-col flex-1 w-full bg-no overflow-y-auto">
+            <!-- Primera fila ocupando 1/4 de la pantalla -->
+            <main class="relative z-0 flex-1 pb-8 px-3 bg-slate-500" style="flex: 1 1 20%;">
+                <div class="flex text-center items-center justify-center h-full">
+                    <h1 class="items-center text-4xl font-bold text-gray-800" >Bienvenido</h1>
+                </div>
+            </main>
+        
+            <!-- Segunda fila ocupando el resto (3/4 de la pantalla) -->
+            <main class="relative z-0 flex-1 pb-8 px-6 bg-slate-500" style="flex: 1 1 80%;">
+                <div class="grid grid-cols-2 gap-4 p-4 h-full w-full">
+                    <div class="p-4 text-center bg-cyan-300 flex items-end justify-center" style="background-image: url(https://www.hyundai.cl/content/uploads/hyundai-ioniq-6-driving-experience-0323-exterior-25.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                        <button (click)="goToCarList()" class="rounded-xl bg-gradient-to-br from-[#6025F5] to-[#FF5555] px-5 py-3 text-base font-medium text-white transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50">
+                            Vehiculo
+                        </button>
+                    </div>
+                    <div class="p-4 text-center bg-slate-200 flex items-end justify-center" style="background-image: url(https://img.freepik.com/foto-gratis/vendedora-hablando-cliente-salon-autos_1303-26818.jpg?t=st=1734238861~exp=1734242461~hmac=3952bbc08087fe787cbfdaecab4209af07baa83d1abb706137268e8a6ce9e69a&w=996); background-size: cover; background-position: center 20%; overflow: hidden;">
+                        <button class="rounded-xl bg-gradient-to-br from-[#6025F5] to-[#FF5555] px-5 py-3 text-base font-medium text-white transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50">
+                            Arriendo
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Tercera fila con el "Datos" centrado -->
+            <main class="relative z-0 flex-1 pb-8 px-6 bg-slate-500" style="flex: 1 1 80%; height: 100%;">
+                <div class="grid grid-cols-2 gap-4 p-4 h-full w-full">
+                    <div class="p-4 text-center bg-slate-900 flex items-center justify-center col-span-2" style="background-image: url(https://static.vecteezy.com/system/resources/previews/017/856/899/non_2x/financial-business-statistics-with-bar-graph-and-candlestick-chart-show-stock-market-price-and-effective-earning-on-blue-background-vector.jpg); background-size: cover; background-position: center 50%; overflow: hidden;">
+                        <button class="rounded-xl bg-gradient-to-br from-[#6025F5] to-[#FF5555] px-5 py-3 text-base font-medium text-white transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/50">
+                            Datos
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- End Content -->
+    </div>
+</body>
+
+

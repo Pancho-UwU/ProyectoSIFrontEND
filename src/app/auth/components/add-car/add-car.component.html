@@ -1,0 +1,28 @@
+<div class="flex justify-center items-center  min-h-screen" style="background-color: rgb(180, 213, 236);">
+    <div class="lg:w-1/3 md:w-1/4 w-full mx-4 my-8">
+      <form [formGroup]="addCar" (ngSubmit)="onSubmit()" class="bg-white p-6 md:p-10 rounded-lg shadow-lg">
+        <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Agregar vehiculo</h1>
+  
+        <div>
+          <label class="text-gray-800 font-semibold block my-3 text-md" for="Name">Nombre</label>
+          <input formControlName="Name" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="Name" />
+        </div>
+        <div>
+          <label class="text-gray-800 font-semibold block my-3 text-md" for="Price">Codigo del vehiculo</label>
+          <input formControlName="CodeVehicle" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="Price" />
+        </div>
+        <div>
+          <label class="text-gray-800 font-semibold block my-3 text-md" for="Stock">Precio de baja</label>
+          <input formControlName="LowPrice" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="Stock" />
+        </div>
+        <div>
+            <label class="text-gray-800 font-semibold block my-3 text-md" for="Stock">Extra aire</label>
+            <input formControlName="AirExtra" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="Stock" />
+        </div>
+       
+        <button type="submit" class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Agregar</button>
+        <button (click)="backToCarList()" type="button" class="w-full mt-6 mb-3 bg-indigo-100 rounded-lg px-4 py-2 text-lg text-gray-800 tracking-wide font-semibold font-sans">Volver</button>
+      </form>
+    </div>
+  </div>
+  

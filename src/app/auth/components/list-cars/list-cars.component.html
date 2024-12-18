@@ -1,0 +1,72 @@
+<section class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] p-3 h-screen w-full" style="background-color: rgb(180, 213, 236);">
+  <div class="mx-auto max-w-screen-xl px-4">
+    
+    
+    <div class="flex justify-between items-center">
+      <button
+      (click)="goToCreateCar()"
+        type="button"
+        class="text-white mb-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+      >
+        Agregar un vehiculo
+      </button>
+      <div class="ml-4"> <!-- Div para separar el botón de vuelta y el formulario -->
+        <form (ngSubmit)="onSubmit()" class="bg-white shadow-md overflow-hidden rounded-lg flex items-center">
+          <label class="block text-gray-800 font-semibold my-3 text-md px-4" for="query">Filtro</label>
+          <input type="text" [(ngModel)]="query" #queryInput="ngModel" name="query" class="block w-full px-3 py-1 focus:outline-none bg-gray-200" placeholder="Ingrese algún dato">
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-2">Buscar</button>
+          <button (click)="loadCars()" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-1">Cancelar</button>
+        </form>
+      </div>
+      <button
+      (click)="backToHome()"
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+      >
+        Volver
+      </button>
+      
+      
+    </div>
+    
+
+    <div class="bg-white relative shadow-md overflow-x-auto rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500 border border-collapse border-black">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="text-center px-4 py-3">Codigo vehiculo</th>
+            <th scope="col" class="text-center px-4 py-3">Nombre</th>
+            <th scope="col" class="text-center px-4 py-3">Precio baja</th>
+            <th scope="col" class="text-center px-4 py-3">Veces arrendado</th>
+            <th scope="col" class="text-center px-4 py-3">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b bg-gray-100" *ngIf="cars.length === 0">
+            <td colspan="7" class="px-4 py-3 text-center text-gray-500">
+              No hay integrantes
+            </td>
+          </tr>
+          <tr class="border-b hover:bg-gray-50" *ngFor="let car of cars">
+            <td class=" text-center items-center px-4 py-3">{{ car.codeVehicle }}</td>
+            <td class="text-center items-center px-4 py-3">{{ car.name }}</td>
+            <td class="text-center items-center px-4 py-3">{{ car.lowPrice }}</td>
+            <td class="text-center items-center px-4 py-3">{{ car.timesRented }}</td>
+            
+            
+            <td class="px-4 py-3 space-x-2">
+              <button
+              (click)="deleteCar(car.id)"
+                type="button"
+                class="py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              >
+                Eliminar
+              </button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

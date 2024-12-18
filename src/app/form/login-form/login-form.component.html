@@ -1,0 +1,43 @@
+<div class="bg-gray-100 flex justify-center items-center h-screen">
+    <!-- Left: Image -->
+  <div class="w-1/2 h-screen hidden lg:block">
+  <img src="https://i.imgur.com/MeYwKSQ.jpeg" alt="Placeholder Image" class="object-cover w-full h-full">
+  </div>
+  <!-- Right: Login Form -->
+  <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
+  <h1 class="text-2xl font-semibold mb-4">Incio de sesión</h1>
+  <form action="#" [formGroup]="forms" (ngSubmit)="onSubmit()" method="POST">
+    <!-- Username Input -->
+    <div class="mb-4">
+      <label  class="block text-gray-600">RUT</label>
+      <input type="text" id="Rut" formControlName="Rut" pattern="^[0-9]{7,8}-[0-9kK]$" required title="El formato debe de ser 12345678-9"  name="Rut" placeholder="12345678-9" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      <div *ngIf="RuInvalid">
+        <p>El rut debe ser ingresado.</p>
+      </div>
+      
+     
+    </div>
+    <div class="mb-6 text-blue-500">
+      <p></p>
+    </div>
+    <!-- Password Input -->
+    <div class="mb-4">
+      <label  class="block text-gray-600">Contraseña</label>
+      <input type="password" formControlName="PasswordEntered" id="PasswordEntered" name="PasswordEntered" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      <div *ngIf="PasswordInvalid">
+        <p>La contraseña debe ser ingresada</p>
+      </div>
+      
+    </div>
+    
+    <!-- Forgot Password Link -->
+    <div class="mb-6 mt-10 text-blue-500">
+      <p></p>
+    </div>
+    <!-- Login Button -->
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+  </form>
+  
+  
+  </div>
+  </div>
