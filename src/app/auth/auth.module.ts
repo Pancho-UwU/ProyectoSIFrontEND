@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListRentComponent } from './components/list-rent/list-rent.component';
 import { UpdateCarComponent } from './components/update-car/update-car.component';
 import { AddCarComponent } from './components/add-car/add-car.component';
+import { AddRentComponent } from './components/add-rent/add-rent.component';
 
 
 
@@ -17,7 +18,8 @@ import { AddCarComponent } from './components/add-car/add-car.component';
     ListCarsComponent,
     ListRentComponent,
     UpdateCarComponent,
-    AddCarComponent
+    AddCarComponent,
+    AddRentComponent
    
   ],
   imports: [
